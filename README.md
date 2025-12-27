@@ -8,8 +8,7 @@ Due to local hardware constraints, the project was prototyped on a representativ
 
 Pipeline Architecture
 Step 1: Video → Audio
-Extract audio from video files
-Convert videos to MP3 format
+Extract audio from video files using FFmpeg and convert videos to mp3 format.
 File: 01_videos_to_mp3.py
 
 Step 2: Audio → Text (Transcription)
@@ -25,11 +24,17 @@ File: 03_preprocess_json.py
 Step 4: RAG Query Processing
 Generate embeddings for text chunks
 Store embeddings in a vector store
-Retrieve relevant chunks based on user query
+Retrieve relevant chunks using cosine similarity  based on user query 
 Generate grounded responses using an LLM
 File: 04_process_incoming_query.py
 
 Tech Stack:
-Python
-Whisper – Speech-to-text
-LLM (ollama3.2)
+-Python
+-Numpy, Pandas
+-OpenAI Whisper – Speech-to-text
+-scikit-learn -embedding generation & cosine similarity
+-LLM (ollama3.2)
+
+## Design Decisions
+-Used local embeddings due to compute constraints 
+-Step wise scripts for modular debugging
