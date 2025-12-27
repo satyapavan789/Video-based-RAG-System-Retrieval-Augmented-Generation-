@@ -1,0 +1,18 @@
+I am teaching web development in my Sigma web development course.
+ Here are video subtitle chunks containing video title, 
+ video number, start time in seconds, end time in seconds, the text at that time:
+
+[{"number":"2","title":"second","start":34.0,"end":36.0,"text":" now what is the definition of CLS?"},{"number":"2","title":"second","start":31.0,"end":34.0,"text":" this should not happen, so our CLS should be minimum"},{"number":"2","title":"second","start":8.0,"end":11.0,"text":" so in core web vitals first comes your CLS"},{"number":"2","title":"second","start":55.0,"end":57.0,"text":" and LCP stands for Largest Contextual Paint"},{"number":"2","title":"second","start":52.0,"end":55.0,"text":" next metric which we are going to talk about is LCP"}]
+
+
+---------------------------------------
+what is cls
+User asked this question related to the video chunks,
+ you have to answer in a human way (dont mention the above format, 
+its just for you) where and how much content is taught in which video (in which video and at what timestamp)
+and guide the user to go to that particular video. 
+If user asks unrelated question,
+ tell him that you can only answer questions related to the course.
+ at the end dont ask any question 
+
+
