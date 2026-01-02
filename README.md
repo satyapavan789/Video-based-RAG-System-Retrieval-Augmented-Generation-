@@ -1,40 +1,26 @@
-Large Language Models often hallucinate when answering questions without grounded context.
-This project implements a Retrieval-Augmented Generation (RAG) system that answers user queries using video content by retrieving relevant information from transcribed videos before generating responses.
+RAG AI Assistant for Video Data
+(Retrieval-Augmented Generation Project)
 
-Solution Overview
+Overview:
+-Developed a Retrieval-Augmented Generation (RAG) assistant to extract and answer questions from video content by combining speech-to-text transcription with retrieval-based language modeling.
 
-The system converts video data into searchable knowledge and uses a retriever–generator architecture to provide context-aware, grounded answers.
-Due to local hardware constraints, the project was prototyped on a representative subset of the dataset, while keeping the pipeline fully scalable.
+Problem Statement:
+-Video content contains valuable information but is difficult to search or query efficiently.
+-The goal was to enable text-based querying of video content using AI techniques.
 
-Pipeline Architecture
-Step 1: Video → Audio
-Extract audio from video files using FFmpeg and convert videos to mp3 format.
-File: 01_videos_to_mp3.py
+Approach:
+-Converted video to audio and generated transcripts using Whisper AI.
+-Processed and chunked transcripts for efficient retrieval.
+-Implemented a retrieval-based generation pipeline using a locally hosted LLM via Ollama.
+-Retrieved relevant transcript segments and generated contextual answers based on user queries.
 
-Step 2: Audio → Text (Transcription)
-Convert audio files to text using Whisper
-Generate timestamped transcripts in JSON format
-File: 02_mp3_to_json.py
+Key Features
+-Question answering over video content.
+-Local LLM inference (no external API dependency).
+-Modular pipeline separating transcription, retrieval, and generation.
 
-Step 3: Text Preprocessing
-Clean and normalize transcripts
-Chunk long text into smaller segments suitable for embeddings
-File: 03_preprocess_json.py
+Tools & Technologies:
+Python | Whisper AI | FFmpeg | Vector Search | Ollama (Local LLM)
 
-Step 4: RAG Query Processing
-Generate embeddings for text chunks
-Store embeddings in a vector store
-Retrieve relevant chunks using cosine similarity  based on user query 
-Generate grounded responses using an LLM
-File: 04_process_incoming_query.py
-
-Tech Stack:
--Python
--Numpy, Pandas
--OpenAI Whisper – Speech-to-text
--scikit-learn -embedding generation & cosine similarity
--LLM (ollama3.2)
-
-## Design Decisions
--Used local embeddings due to compute constraints 
--Step wise scripts for modular debugging
+Outcome:
+This project demonstrates practical experience with modern AI workflows, including transcription, retrieval systems, and large language model integration, highlighting applied understanding of RAG concepts.
